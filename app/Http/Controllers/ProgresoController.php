@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Progreso;
 
 class ProgresoController extends Controller
 {
@@ -14,6 +15,7 @@ class ProgresoController extends Controller
     public function index()
     {
         //
+        return Progreso::all();
     }
 
     /**
@@ -35,6 +37,8 @@ class ProgresoController extends Controller
     public function store(Request $request)
     {
         //
+        return Progreso::create($request->all());
+
     }
 
     /**
@@ -46,6 +50,8 @@ class ProgresoController extends Controller
     public function show($id)
     {
         //
+        return response()->json(Progreso::find($id));
+
     }
 
     /**
@@ -69,6 +75,10 @@ class ProgresoController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $Progreso = Progreso::findOrFail($id);
+        $Progreso->update($request->all());
+
+        return $Progreso;
     }
 
     /**
@@ -80,5 +90,10 @@ class ProgresoController extends Controller
     public function destroy($id)
     {
         //
+        $progreso = Progreso::findOrFail($id);
+
+        $progreso->delete();
+
+        return response()->json(null, 204);
     }
 }

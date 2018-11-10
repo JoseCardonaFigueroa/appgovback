@@ -17,5 +17,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('obras', 'ObrasController');
-Route::resource('progreso', 'ProgresoController');
+Route::resource('obras', 'ObraController');
+Route::resource('progresos', 'ProgresoController');

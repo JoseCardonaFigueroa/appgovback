@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Obra;
 
 class ObraController extends Controller
 {
@@ -14,6 +15,7 @@ class ObraController extends Controller
     public function index()
     {
         //
+        return Obra::all();
     }
 
     /**
@@ -35,6 +37,7 @@ class ObraController extends Controller
     public function store(Request $request)
     {
         //
+        return Obra::create($request->all());
     }
 
     /**
@@ -46,6 +49,7 @@ class ObraController extends Controller
     public function show($id)
     {
         //
+        return response()->json(Obra::find($id));
     }
 
     /**
@@ -69,6 +73,10 @@ class ObraController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $obra = Obra::findOrFail($id);
+        $obra->update($request->all());
+
+        return $obra;
     }
 
     /**
@@ -79,6 +87,10 @@ class ObraController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $obra = Obra::findOrFail($id);
+
+      $obra->delete();
+
+      return response()->json(null, 204);
     }
 }
