@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Obra;
+use App\Progreso;
 
 class ObrasTableSeeder extends Seeder
 {
@@ -59,7 +60,7 @@ class ObrasTableSeeder extends Seeder
               'gaveta' => $faker->sentence,
               'expediente' => 200 + $i,
               'gaveta' => $faker->sentence,
-              'no_obra' => 'Vo.Bo.-00' + $i + '/1',
+              'no_obra' => 'Vo.Bo.-00'.$i.'/1',
               'registro_de_oficios' => 'oficio',
               'fuente_financiera' => 'Banamex',
               'ejercicio' => '2018',
