@@ -54,7 +54,7 @@ class ObrasTableSeeder extends Seeder
 
       // And now, let's create a few articles in our database:
       for ($i = 1; $i <= 30; $i++) {
-          $o = Obra::create([
+          $oArr = [
               'archivo' => $i,
               'gaveta' => $faker->sentence,
               'expediente' => 200 + $i,
@@ -78,8 +78,8 @@ class ObrasTableSeeder extends Seeder
               'inicio_real' => $faker->date($format = 'Y-m-d', $max = 'now'),
               'termino_real' => $faker->date($format = 'Y-m-d', $max = 'now'),
               'termino_programado' => $faker->date($format = 'Y-m-d', $max = 'now'),
-
-          ]);
+          ];
+          $o = Obra::create($oArr);
 
           for ($j=1; $j < 5; $j++) { 
             Progreso::create([
