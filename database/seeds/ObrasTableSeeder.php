@@ -82,15 +82,15 @@ class ObrasTableSeeder extends Seeder
           ];
           $o = Obra::create($oArr);
 
-          for ($j=1; $j < 5; $j++) { 
-            Progreso::create([
-              'fecha' => $faker->date($format = 'Y-m-d', $max = 'now'),
-              'porcentaje' => $j,
-              'dia' => $j,
-              'subtotal' => $j,
-              'obra_id' => $o->pluck('id')
-            ]);
-          }
+          // for ($j=1; $j < 5; $j++) { 
+          //   Progreso::create([
+          //     'fecha' => $faker->date($format = 'Y-m-d', $max = 'now'),
+          //     'porcentaje' => $j,
+          //     'dia' => $j,
+          //     'subtotal' => $j,
+          //     'obra_id' => $o->pluck('id')
+          //   ]);
+          // }
       }
     }
 }
