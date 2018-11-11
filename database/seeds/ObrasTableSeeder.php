@@ -87,7 +87,8 @@ class ObrasTableSeeder extends Seeder
               'fecha' => $faker->date($format = 'Y-m-d', $max = 'now'),
               'porcentaje' => $j,
               'dia' => $j,
-              'subtotal' => $o->pluck('id'),
+              'subtotal' => $j,
+              'obra_id' => $o->pluck('id')
             ]);
           }
       }
