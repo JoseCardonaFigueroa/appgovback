@@ -7,6 +7,10 @@ use App\Obra;
 
 class ObraController extends Controller
 {
+	/*public __construct(){
+		$this->middleware('cors');
+	}
+
     /**
      * Display a listing of the resource.
      *
