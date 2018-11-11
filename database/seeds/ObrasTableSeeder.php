@@ -85,8 +85,8 @@ class ObrasTableSeeder extends Seeder
           for ($j=1; $j < 5; $j++) { 
             Progreso::create([
               'fecha' => $faker->date($format = 'Y-m-d', $max = 'now'),
-              'porcentaje' => $faker->randomNumber($nbDigits = 100, $strict = false),
-              'dia' => $faker->randomNumber($nbDigits = 100, $strict = false),
+              'porcentaje' => $j,
+              'dia' => $j,
               'subtotal' => $o->id,
             ]);
           }
