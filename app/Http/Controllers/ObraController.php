@@ -7,7 +7,7 @@ use App\Obra;
 
 class ObraController extends Controller
 {
-	/*public __construct(){
+	public function __construct(){
 		$this->middleware('cors');
 	}
 
